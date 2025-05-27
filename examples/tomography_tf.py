@@ -1,7 +1,7 @@
 import tifffile
 import os
-from ganrectf.utils import angles, nor_tomo
-from ganrectf.ganrec import GANtomo
+from selfphish.utils import angles, nor_tomo
+from selfphish.ganrec import GANtomo
 
 
 def main():

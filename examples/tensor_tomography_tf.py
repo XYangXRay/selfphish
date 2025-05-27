@@ -1,7 +1,7 @@
 import numpy as np
 import tifffile
-from ganrectf.utils import angles
-from ganrectf.ganrec import GANtensor
+from selfphish.utils import angles
+from selfphish.ganrec import GANtensor
 
 
 def main():

@@ -1,7 +1,7 @@
 import time
 import tifffile
-from ganrectf.utils import nor_phase
-from ganrectf.ganrec import GANphase
+from selfphish.utils import nor_phase
+from selfphish.ganrec import GANphase
 
 
 def main():

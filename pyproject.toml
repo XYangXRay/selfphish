@@ -24,21 +24,21 @@ requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [project]
-name = "ganrec"
-version = "0.2.2"
-description = "A deep neural network data reconstruction platform"
+name = "selfphish"
+version = "0.1.0"
+description = "A deep neural network data reconstruction platform for phase retreival"
 authors = [
     { name = "Xiaogang Yang", email = "xiaogang.yang@outlook.com" }
 ]
 license = { file = "LICENSE" }
 readme = "README.md"
-keywords = ["GAN", "Data reconstruction", "Tomography", "Phase retrieval"]
+keywords = ["GAN", "Data reconstruction", "Phase retrieval"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = [
     "numpy>=1.19.2",
     "tifffile>=2023.12.9",
@@ -49,30 +49,24 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-tensorflow = ["tensorflow>=2.0.0"]
+tensorflow = ["tensorflow>=2.16.0"]
 pytorch = [
     "torch>=2.0.0",
     "torchvision",
     "quantities",
 ]
 
-
 [project.urls]
-homepage = "https://github.com/XYangXRay/ganrec"
-repository = "https://github.com/XYangXRay/ganrec"
-documentation = "https://github.com/XYangXRay/ganrec"
-
-
+homepage = "https://github.com/XYangXRay/selfphish"
+repository = "https://github.com/XYangXRay/selfphish"
+documentation = "https://github.com/XYangXRay/selfphish"
 
 [tool.hatch.build.targets.wheel]
-include = ["ganrectf", "ganrectorch"]
-
-
+include = ["selfphish"]
 
 [tool.setuptools.packages.find]
-where = ["ganrectf", "ganrectorch"]
+where = ["selfphish"]
 exclude = ["tests*"]
-
 
 [tool.hatch.publish]
 [tool.hatch.publish.repository]
@@ -81,4 +75,86 @@ url = "https://upload.pypi.org/legacy/"
 [tool.hatch.publish.auth]
 username = "env:TWINE_USERNAME"
 password = "env:TWINE_PASSWORD"
+``` 
 
+All references to the old repository and package names have been replaced with selfphish.// filepath: /nsls2/users/xyang4/pyprojects/selfphish/pyproject.toml
+[tool.black]
+line-length = 115
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+
+  # The following are specific to Black, you probably don't want those.
+  | blib2to3
+  | tests/data
+)/
+'''
+
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "selfphish"
+version = "0.1.0"
+description = "A deep neural network data reconstruction platform for phase retreival"
+authors = [
+    { name = "Xiaogang Yang", email = "xiaogang.yang@outlook.com" }
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+keywords = ["GAN", "Data reconstruction", "Phase retrieval"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.25.0",
+    "tifffile>=2024.08.01",
+    "matplotlib>=3.7.3",
+    "scikit-image>=0.21.1",
+    "ipython>=9.5.0",
+    "tqdm>=4.66.1",
+]
+
+[project.optional-dependencies]
+tensorflow = ["tensorflow>=2.16.0"]
+pytorch = [
+    "torch>=2.7.0",
+    "torchvision",
+    "quantities",
+]
+
+[project.urls]
+homepage = "https://github.com/XYangXRay/selfphish"
+repository = "https://github.com/XYangXRay/selfphish"
+documentation = "https://github.com/XYangXRay/selfphish"
+
+[tool.hatch.build.targets.wheel]
+include = ["selfphish"]
+
+[tool.setuptools.packages.find]
+where = ["selfphish"]
+exclude = ["tests*"]
+
+[tool.hatch.publish]
+[tool.hatch.publish.repository]
+url = "https://upload.pypi.org/legacy/"
+
+[tool.hatch.publish.auth]
+username = "env:TWINE_USERNAME"
+password = "env:TWINE_PASSWORD"
+``` 
+
+All references to the old repository and package names have been replaced with selfphish.

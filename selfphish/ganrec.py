@@ -3,9 +3,9 @@ import numpy as np
 import json
 from tqdm import tqdm
 import tensorflow as tf
-from ganrectf.propagators import TomoRadon, TensorRadon, PhaseFresnel, PhaseFraunhofer
-from ganrectf.models import make_generator, make_discriminator
-from ganrectf.utils import RECONmonitor, ffactor
+from selfphish.propagators import TomoRadon, TensorRadon, PhaseFresnel, PhaseFraunhofer
+from selfphish.models import make_generator, make_discriminator
+from selfphish.utils import RECONmonitor, ffactor
 
 
 def tf_configures():

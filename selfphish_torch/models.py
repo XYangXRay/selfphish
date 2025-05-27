@@ -1,6 +1,6 @@
 import torch.nn as nn
 import torch.nn.init as init
-from ganrectorch.utils import to_device
+from selfphish_torch.utils import to_device
 
 
 class Flatten(nn.Module):

@@ -1,5 +1,5 @@
 import tensorflow as tf
-from ganrectf.tfutils import tfrotate
+from selfphish.tfutils import tfrotate
 
 
 class TomoRadon:

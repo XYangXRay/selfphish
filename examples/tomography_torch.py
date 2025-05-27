@@ -1,8 +1,8 @@
 import numpy as np
 import tifffile
 import matplotlib.pyplot as plt
-from ganrectorch.utils import angles, nor_tomo
-from ganrectorch.ganrec import GANtomo
+from selfphish_torch.utils import angles, nor_tomo
+from selfphish_torch.ganrec import GANtomo
 
 prj = tifffile.imread("./test_data/shale_prj.tiff")
 nang, px = prj.shape

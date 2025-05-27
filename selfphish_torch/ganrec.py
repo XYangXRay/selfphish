@@ -5,9 +5,9 @@ import torch
 import torch.nn.functional as F
 from torch import nn, optim
 from torch.cuda.amp import GradScaler, autocast
-from ganrectorch.models import Generator, Discriminator
-from ganrectorch.propagators import RadonTransform
-from ganrectorch.utils import RECONmonitor, to_device, tensor_to_np
+from selfphish_torch.models import Generator, Discriminator
+from selfphish_torch.propagators import RadonTransform
+from selfphish_torch.utils import RECONmonitor, to_device, tensor_to_np
 
 
 def torch_configures():
