@@ -55,7 +55,7 @@ If you are contributing to SELFPHISH development, please follow these steps to s
 Open your terminal and create a new conda environment named `selfphish` with Python 3.11:
 
 ```bash
-conda create --name selfphish python=3.11
+conda create --name selfphish python=3.10
 conda activate selfphish
 ```
 
@@ -100,12 +100,12 @@ SELFPHISH is designed for GPU-accelerated tasks. Ensure you install the GPU vers
 
 # Examples
 
-SELFPHISH currently includes examples for phase retrieval in tomography and holography:
+SELFPHISH currently includes examples for phase retrieval of holography:
 
-1. X-ray tomography phase retrieval:
-   - [Tomography Example](https://github.com/XYangXRay/selfphish/blob/main/examples/tomography_tf.ipynb)
-2. Holography phase retrieval:
+1. Holography phase retrieval:
    - [Phase Retrieval Example](https://github.com/XYangXRay/selfphish/blob/main/examples/holography_tf.ipynb)
+2. X-ray tomography:
+   - [Tomography Example](https://github.com/XYangXRay/selfphish/blob/main/examples/tomography_tf.ipynb)
 
 # References
 
