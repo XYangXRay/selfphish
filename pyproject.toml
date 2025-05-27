@@ -40,96 +40,16 @@ classifiers = [
 ]
 requires-python = ">=3.10"
 dependencies = [
-    "numpy>=1.19.2",
-    "tifffile>=2023.12.9",
-    "matplotlib>=3.3.2",
-    "scikit-image>=0.19.3",
-    "ipython>=8.12.3",
-    "tqdm>=4.65.0",
-]
-
-[project.optional-dependencies]
-tensorflow = ["tensorflow>=2.16.0"]
-pytorch = [
-    "torch>=2.0.0",
-    "torchvision",
-    "quantities",
-]
-
-[project.urls]
-homepage = "https://github.com/XYangXRay/selfphish"
-repository = "https://github.com/XYangXRay/selfphish"
-documentation = "https://github.com/XYangXRay/selfphish"
-
-[tool.hatch.build.targets.wheel]
-include = ["selfphish"]
-
-[tool.setuptools.packages.find]
-where = ["selfphish"]
-exclude = ["tests*"]
-
-[tool.hatch.publish]
-[tool.hatch.publish.repository]
-url = "https://upload.pypi.org/legacy/"
-
-[tool.hatch.publish.auth]
-username = "env:TWINE_USERNAME"
-password = "env:TWINE_PASSWORD"
-``` 
-
-All references to the old repository and package names have been replaced with selfphish.// filepath: /nsls2/users/xyang4/pyprojects/selfphish/pyproject.toml
-[tool.black]
-line-length = 115
-include = '\.pyi?$'
-exclude = '''
-/(
-    \.git
-  | \.hg
-  | \.mypy_cache
-  | \.tox
-  | \.venv
-  | _build
-  | buck-out
-  | build
-  | dist
-
-  # The following are specific to Black, you probably don't want those.
-  | blib2to3
-  | tests/data
-)/
-'''
-
-[build-system]
-requires = ["hatchling", "hatch-vcs"]
-build-backend = "hatchling.build"
-
-[project]
-name = "selfphish"
-version = "0.1.0"
-description = "A deep neural network data reconstruction platform for phase retreival"
-authors = [
-    { name = "Xiaogang Yang", email = "xiaogang.yang@outlook.com" }
-]
-license = { file = "LICENSE" }
-readme = "README.md"
-keywords = ["GAN", "Data reconstruction", "Phase retrieval"]
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-]
-requires-python = ">=3.10"
-dependencies = [
     "numpy>=1.25.0",
     "tifffile>=2024.08.01",
     "matplotlib>=3.7.3",
     "scikit-image>=0.21.1",
-    "ipython>=9.5.0",
+    "ipython>=8.36.0",
     "tqdm>=4.66.1",
+    "tensorflow>=2.16.0",
 ]
 
 [project.optional-dependencies]
-tensorflow = ["tensorflow>=2.16.0"]
 pytorch = [
     "torch>=2.7.0",
     "torchvision",
@@ -142,11 +62,23 @@ repository = "https://github.com/XYangXRay/selfphish"
 documentation = "https://github.com/XYangXRay/selfphish"
 
 [tool.hatch.build.targets.wheel]
+# The default wheel package contains the TensorFlow backend located in the `selfphish` directory.
 include = ["selfphish"]
 
+# If installing with the pytorch extra (pip install selfphish[pytorch]),
+# the PyTorch backend in the `selfphish_torch` directory will also be packaged.
+# (Note: Hatch does not support conditional inclusion, so you may have to adjust
+# your package discovery or use a separate distribution if fully isolating the backends is desired.)
+
 [tool.setuptools.packages.find]
+# By default, only discover the TensorFlow backend package.
 where = ["selfphish"]
 exclude = ["tests*"]
+
+# For developers who wish to build the PyTorch backend package,
+# uncomment the following and adjust as needed:
+# where = ["selfphish", "selfphish_torch"]
+# include = ["selfphish*", "selfphish_torch*"]
 
 [tool.hatch.publish]
 [tool.hatch.publish.repository]
@@ -155,6 +87,3 @@ url = "https://upload.pypi.org/legacy/"
 [tool.hatch.publish.auth]
 username = "env:TWINE_USERNAME"
 password = "env:TWINE_PASSWORD"
-``` 
-
-All references to the old repository and package names have been replaced with selfphish.
