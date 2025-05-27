@@ -1,5 +1,5 @@
 ======
-ganrec
+selfphish
 ======
 
 .. image:: https://img.shields.io/travis/XYangXRay/ganrec.svg
