@@ -82,8 +82,8 @@ class TensorRadon:
 class PhaseFresnel:
 
     def __init__(self, phase, absorption, ff, px):
-        self.phase = phase
-        self.absorption = absorption
+        self.phase = tf.squeeze(phase, axis=0)
+        self.absorption = tf.squeeze(absorption, axis=0)
         self.ff = ff
         self.px = px
 

@@ -46,7 +46,7 @@ dependencies = [
     "scikit-image>=0.21.1",
     "ipython>=8.36.0",
     "tqdm>=4.66.1",
-    "tensorflow>=2.16.0",
+    "tensorflow[and-cuda]>=2.16.0",
 ]
 
 [project.optional-dependencies]
