@@ -35,7 +35,7 @@
         "abs_ratio": 0.05,
         "g_learning_rate": 1e-3,
         "d_learning_rate": 1e-5,
-        "phase_only": true,
+        "phase_only": false,
         "save_wpath": null,
         "init_wpath": null,
         "init_model": false,

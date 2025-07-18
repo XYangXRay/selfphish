@@ -192,10 +192,10 @@ class GANphase:
         self.conv_size = phase_args["conv_size"]
         self.dropout = phase_args["dropout"]
         self.l1_ratio = phase_args["l1_ratio"]
-        self.abs_ratio = phase_args["abs_ratio"]
+        self.abs_ratio = phase_args["abs_ratio"]  
+        self.phase_only = phase_args["phase_only"]
         self.g_learning_rate = phase_args["g_learning_rate"]
         self.d_learning_rate = phase_args["d_learning_rate"]
-        self.phase_only = phase_args["phase_only"]
         self.save_wpath = phase_args["save_wpath"]
         self.init_wpath = phase_args["init_wpath"]
         self.init_model = phase_args["init_model"]
@@ -220,9 +220,10 @@ class GANphase:
         with tf.GradientTape() as gen_tape, tf.GradientTape() as disc_tape:
             recon = self.generator(i_input)
             phase = tfnor_phase(recon[:, :, :, 0])
-            absorption = (1 - tfnor_phase(recon[:, :, :, 1])) * self.abs_ratio 
             if self.phase_only:
                 absorption = tf.zeros_like(phase)
+            else:
+                absorption = (1 - tfnor_phase(recon[:, :, :, 1])) * self.abs_ratio
             phase_obj = PhaseFresnel(phase, absorption, ff, self.img_w)
             i_rec = phase_obj.compute()
             real_output = self.discriminator(i_input, training=True)
