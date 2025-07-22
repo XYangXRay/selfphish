@@ -27,26 +27,16 @@ conda create --name selfphish python=3.10
 conda activate selfphish
 ```
 
-### 2. Install TensorFlow OR PyTorch 
-Choose and install either TensorFlow or PyTorch based on your preference.
-
-For TensorFlow:
-```bash
-pip install tensorflow
-```
-
-For PyTorch (ensure you select the correct version for your system from the official website):
-```bash
-# Example command for installing PyTorch with CUDA support
-pip install torch torchvision torchaudio
-```
-
-### 3. Install 'selfphish' from PyPI
-Finally, install the selfphish package from PyPI:
+### 2. Install 'selfphish' from PyPI
+The default backend if TensorFlow, you can simply install the selfphish by running:
 ```bash
 pip install selfphish
 ```
+If you are interested to use the PyTorch backend, you can install it:
 
+```bash
+pip install selfphish [pytorch]
+```
 ## Steps for Developers
 
 If you are contributing to SELFPHISH development, please follow these steps to set up your development environment:
