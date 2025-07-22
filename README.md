@@ -1,105 +1,111 @@
-# SELFPHISH: a Self-supervised, Physics-Informed generative networks approach for the phase retrieval
 
-# Overview
+# SELFPHISH: Self-supervised, Physics-Informed Generative Networks for Phase Retrieval
 
-SELFPHISH is a data reconstruction framework that harnesses the power of self-supervised, physics-informed generative networks. While traditional reconstruction methods rely on intricate algorithms to piece together fragmented data, SELFPHISH leverages deep generative models that are both self-supervised and guided by physical constraints to reimagine and revitalize the phase retrieval process.
+![PyPI](https://img.shields.io/pypi/v/selfphish)
+![License](https://img.shields.io/github/license/XYangXRay/selfphish)
+![Python](https://img.shields.io/pypi/pyversions/selfphish)
 
-Originally designed for complex phase retrieval in tomography and holography, SELFPHISH shines in its adaptability. With the capability to incorporate user-defined forward models, this framework can be flexibly adapted for various advanced data reconstruction challenges.
+## Overview
 
-# Features
+**SELFPHISH** is a flexible data reconstruction framework that harnesses self-supervised, physics-informed generative networks. Unlike traditional methods that rely on complex algorithms, SELFPHISH leverages deep generative models guided by physical constraints to advance the phase retrieval process.
 
-1. Self-supervised, Physics-Informed Networks: At its core, SELFPHISH employs deep generative networks that are both self-supervised and physics-guided, enabling cutting-edge reconstruction performance.
-2. Specialized for Phase Retrieval: Optimized for tasks in phase retrieval and tomography, ensuring precise and reliable reconstructions.
-3. Modular Design: The architecture allows users to integrate their own forward models, making it adaptable for a range of reconstruction challenges.
-4. Efficient and Scalable: Built to manage large datasets, SELFPHISH maintains speed and efficiency without compromising reconstruction accuracy.
+Originally designed for complex phase retrieval in tomography and holography, SELFPHISH is highly adaptable and can incorporate user-defined forward models for a wide range of advanced data reconstruction challenges.
 
-# Installation
+## Features
 
-This guide provides detailed steps for setting up the `selfphish` package in a Conda environment.
+- **Self-supervised, Physics-Informed Networks:** Deep generative networks that are both self-supervised and physics-guided for state-of-the-art reconstruction.
+- **Specialized for Phase Retrieval:** Optimized for phase retrieval and tomography tasks, ensuring precise and reliable reconstructions.
+- **Modular Design:** Easily integrate custom forward models for diverse reconstruction challenges.
+- **Efficient and Scalable:** Handles large datasets efficiently without compromising accuracy.
 
-## Steps for General Users
+---
 
-### 1. Create & Activate a Conda Environment
-Open your terminal and create a new environment named `selfphish` with Python 3.11:
 
-```bash
-conda create --name selfphish python=3.10
-conda activate selfphish
-```
+## Installation
 
-### 2. Install 'selfphish' from PyPI
-The default backend if TensorFlow, you can simply install the selfphish by running:
-```bash
-pip install selfphish
-```
-If you are interested to use the PyTorch backend, you can install it:
+The following steps will help you set up the `selfphish` package in a Conda environment.
 
-```bash
-pip install selfphish [pytorch]
-```
-## Steps for Developers
 
-If you are contributing to SELFPHISH development, please follow these steps to set up your development environment:
+### For General Users
 
-### 1. Create & Activate a Conda Environment
-Open your terminal and create a new conda environment named `selfphish` with Python 3.11:
+1. **Create & Activate a Conda Environment**
 
-```bash
-conda create --name selfphish python=3.10
-conda activate selfphish
-```
+   ```bash
+   conda create --name selfphish python=3.11
+   conda activate selfphish
+   ```
 
-### 2. Install TensorFlow OR PyTorch 
-Choose and install either TensorFlow or PyTorch.
+2. **Install SELFPHISH from PyPI**
 
-For TensorFlow:
-```bash
-pip install tensorflow
-```
+   - For the default TensorFlow backend:
+     ```bash
+     pip install selfphish
+     ```
+   - For the PyTorch backend:
+     ```bash
+     pip install "selfphish[pytorch]"
+     ```
 
-For PyTorch:
-```bash
-# Example command for installing PyTorch with CUDA support
-pip install torch torchvision torchaudio
-```
+---
 
-### 3. Clone the SELFPHISH Repository
-Clone the repository from GitHub to your local machine:
+### For Developers
 
-```bash
-git clone https://github.com/XYangXRay/selfphish.git
-```
+If you are contributing to SELFPHISH development, follow these steps:
 
-### 4. Install the Required Packages
-Navigate to the repository’s main directory and install the necessary packages in editable mode:
+1. **Create & Activate a Conda Environment**
+   ```bash
+   conda create --name selfphish python=3.11
+   conda activate selfphish
+   ```
 
-```bash
-cd selfphish
-python3 -m pip install -e .
-```
+2. **Install TensorFlow or PyTorch**
+   - For TensorFlow:
+     ```bash
+     pip install tensorflow
+     ```
+   - For PyTorch (with CUDA support):
+     ```bash
+     pip install torch torchvision torchaudio
+     ```
 
-## Additional Notes for Users
+3. **Clone the SELFPHISH Repository**
+   ```bash
+   git clone https://github.com/XYangXRay/selfphish.git
+   cd selfphish
+   ```
 
-### Choosing Between TensorFlow and PyTorch
-If unsure which one to choose, consider the requirements of your project or your familiarity with the libraries:
-- **TensorFlow** is known for its production deployment capabilities and integration with TensorFlow Extended (TFX).
-- **PyTorch** is favored for its simplicity, dynamic computation graph, and strong research community support.
+4. **Install Required Packages in Editable Mode**
+   ```bash
+   python3 -m pip install -e .
+   ```
 
-### Installing GPU Support
-SELFPHISH is designed for GPU-accelerated tasks. Ensure you install the GPU versions of TensorFlow or PyTorch. Refer to their official websites for instructions on installing GPU support.
+---
 
-# Examples
+## Additional Notes
 
-SELFPHISH currently includes examples for phase retrieval of holography:
+- **Choosing a Backend:**
+  - *TensorFlow* is recommended for production and TFX integration.
+  - *PyTorch* is popular for research and dynamic computation graphs.
+- **GPU Support:**
+  - SELFPHISH is designed for GPU acceleration. Install the GPU versions of TensorFlow or PyTorch as needed. See their official documentation for details.
 
-1. Holography phase retrieval:
+---
+
+
+## Examples
+
+SELFPHISH includes ready-to-run examples for phase retrieval and tomography:
+
+1. **Holography phase retrieval:**
    - [Phase Retrieval Example](https://github.com/XYangXRay/selfphish/blob/main/examples/holography_tf.ipynb)
-2. X-ray tomography:
+2. **X-ray tomography:**
    - [Tomography Example](https://github.com/XYangXRay/selfphish/blob/main/examples/tomography_tf.ipynb)
 
-# References
+---
 
-If you find SELFPHISH useful for your research or projects, please consider citing:
+## Citation
+
+If you use SELFPHISH in your research or projects, please cite:
 
 J. Synchrotron Rad. (2020). 27, 486-493.  
 Available at: [https://doi.org/10.1107/S1600577520000831](https://doi.org/10.1107/S1600577520000831)
