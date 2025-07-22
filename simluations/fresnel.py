@@ -52,8 +52,9 @@ def ffactor(px, energy, z, pv):
     return h
 
 def fresnel_propagation(phase, absorption, h, abs_ratio):
-    phase= phase/phase.max()*0.5
-    absorption = absorption/absorption.max()*0.5*abs_ratio
+    # phase= phase/phase.max()*0.5
+    # absorption = absorption/absorption.max()*0.5*abs_ratio
+    absorption = absorption*abs_ratio
     aps = np.exp( - absorption + 1j*phase)
     ifp = (abs(ifft2(h*fft2(aps)))**2).astype('float32')
     return ifp
@@ -78,13 +79,13 @@ def propagate(img_f, img_a, energy, z, pv, abs_ratio):
             absorption = img_a[i]
             absorption = padding(absorption, padded_size, pvalue=absorption.min())          
             ifp_test = fresnel_propagation(phase, absorption, h, abs_ratio)
-            ifp_test = unpadding(ifp_test, cropped_size)
+            ifp_test = unpadding(ifp_test, original_size)
             ifp_tests.append(ifp_test)
     else:
         phase = padding(img_f, padded_size, pvalue=img_f.max())
         absorption = padding(img_a, padded_size, pvalue=img_a.min())  
         ifp_test = fresnel_propagation(phase, absorption, h, abs_ratio)
-        ifp_test = unpadding(ifp_test, cropped_size)
+        ifp_test = unpadding(ifp_test, original_size)
         ifp_tests.append(ifp_test)
 
     return ifp_tests if is_3d else ifp_tests[0]
