@@ -59,23 +59,13 @@ If you are contributing to SELFPHISH development, follow these steps:
    conda activate selfphish
    ```
 
-2. **Install TensorFlow or PyTorch**
-   - For TensorFlow:
-     ```bash
-     pip install tensorflow
-     ```
-   - For PyTorch (with CUDA support):
-     ```bash
-     pip install torch torchvision torchaudio
-     ```
-
-3. **Clone the SELFPHISH Repository**
+2. **Clone the SELFPHISH Repository**
    ```bash
    git clone https://github.com/XYangXRay/selfphish.git
    cd selfphish
    ```
 
-4. **Install Required Packages in Editable Mode**
+3. **Install Required Packages in Editable Mode**
    ```bash
    python3 -m pip install -e .
    ```
