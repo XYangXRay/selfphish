@@ -18,6 +18,7 @@ Originally designed for complex phase retrieval in tomography and holography, SE
 - **Modular Design:** Easily integrate custom forward models for diverse reconstruction challenges.
 - **Efficient and Scalable:** Handles large datasets efficiently without compromising accuracy.
 
+![The flowchart of Selfphish](docs/source/figures/flowchart.png)
 ---
 
 
