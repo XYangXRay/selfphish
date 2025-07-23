@@ -10,7 +10,7 @@ import versioneer
 min_version = (3, 9)
 if sys.version_info < min_version:
     error = """
-ganrec does not support Python {0}.{1}.
+selfphish does not support Python {0}.{1}.
 Python {2}.{3} and above is required. Check your Python version like so:
 
 python3 --version
@@ -35,14 +35,14 @@ with open(path.join(here, "requirements.txt")) as requirements_file:
 
 
 setup(
-    name="ganrec",
+    name="selfphish",
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
     description="Deep learning image reconstruction platform.",
     long_description=readme,
     author="Brookhaven National Lab",
     author_email="yangxg@bnl.gov",
-    url="https://github.com/XYangXRay/ganrec",
+    url="https://github.com/XYangXRay/selfphish",
     python_requires=">={}".format(".".join(str(n) for n in min_version)),
     packages=find_packages(exclude=["docs", "tests"]),
     entry_points={
@@ -52,14 +52,14 @@ setup(
     },
     include_package_data=True,
     package_data={
-        "ganrec": [
+        "selfphish": [
             # When adding files here, remember to update MANIFEST.in as well,
             # or else they will not be included in the distribution on PyPI!
             # 'path/to/data_file',
         ]
     },
     install_requires=requirements,
-    license="BSD (3-clause)",
+    license="MIT",
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "Natural Language :: English",
