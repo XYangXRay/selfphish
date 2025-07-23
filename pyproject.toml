@@ -20,12 +20,12 @@ exclude = '''
 '''
 
 [build-system]
-requires = ["hatchling", "hatch-vcs"]
+requires = ["hatchling", "hatch-vcs", "versioneer[toml]"]
 build-backend = "hatchling.build"
 
 [project]
 name = "selfphish"
-version = "0.1.1"
+dynamic = ["version"]
 description = "A deep neural network data reconstruction platform for phase retreival"
 authors = [
     { name = "Xiaogang Yang", email = "xiaogang.yang@outlook.com" }
@@ -79,6 +79,9 @@ exclude = ["tests*"]
 # uncomment the following and adjust as needed:
 # where = ["selfphish", "selfphish_torch"]
 # include = ["selfphish*", "selfphish_torch*"]
+
+[tool.hatch.version]
+source = "vcs"
 
 [tool.hatch.publish]
 [tool.hatch.publish.repository]
