@@ -1,6 +1,6 @@
 [run]
 source =
-    ganrc
+    selfphish
 [report]
 omit =
     */python?.?/*
