@@ -1,3 +1,5 @@
 selfphish/_version.py export-subst
 selfphish_torch/_version.py export-subst
 _version.py export-subst
+
+*.ipynb linguist-detectable=false
