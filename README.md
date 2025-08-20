@@ -98,5 +98,8 @@ SELFPHISH includes ready-to-run examples for phase retrieval and tomography:
 
 If you use SELFPHISH in your research or projects, please cite:
 
+Xiaogang Yang, Dawit Hailu, Vojtěch Kulvait, Thomas Jentschke, Silja Flenner, Imke Greving, Stuart I. Campbell, Johannes Hagemann, Christian G. Schroer, Tak Ming Wong, and Julian Moosmann, "Self-supervised physics-informed generative networks for phase retrieval from a single X-ray hologram," Opt. Express 33, 35832-35851 (2025)  
+Available at: [https://doi.org/10.1364/OE.569216](https://doi.org/10.1364/OE.569216)
+
 J. Synchrotron Rad. (2020). 27, 486-493.  
 Available at: [https://doi.org/10.1107/S1600577520000831](https://doi.org/10.1107/S1600577520000831)
